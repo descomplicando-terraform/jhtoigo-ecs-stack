@@ -36,7 +36,17 @@ output "ssm_cluster_name" {
   value       = module.ecs.ssm_cluster_name
 }
 
+output "ssm_cluster_id" {
+  description = "SSM parameter ECS Cluster ID"
+  value       = module.ecs.ssm_cluster_id
+}
+
 output "ssm_ecs_log_group" {
   description = "SSM parameter Log Group"
   value       = module.ecs.ssm_ecs_log_group
+}
+
+output "ssm_sd_namespace" {
+  description = "SSM parameter service discovery namespace"
+  value       = aws_ssm_parameter.sd_namespace_name.name
 }
