@@ -26,7 +26,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ecs"></a> [ecs](#module\_ecs) | git@github.com:jhtoigo/terraform-aws-ecs-cluster.git | main |
+| <a name="module_ecs"></a> [ecs](#module\_ecs) | git@github.com:jhtoigo/terraform-aws-ecs-cluster.git | v1.1.0 |
 | <a name="module_load_balancer"></a> [load\_balancer](#module\_load\_balancer) | git@github.com:jhtoigo/terraform-aws-load-balancer.git | v1.0.0 |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | git@github.com:jhtoigo/terraform-aws-vpc.git | v1.2.0 |
 
