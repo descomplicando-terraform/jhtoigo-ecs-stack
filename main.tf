@@ -11,7 +11,7 @@ module "vpc" {
 }
 
 module "load_balancer" {
-  source                       = "git@github.com:jhtoigo/terraform-aws-load-balancer.git?ref=v1.0.0"
+  source                       = "git@github.com:jhtoigo/terraform-aws-load-balancer.git?ref=v1.1.0"
   lb_name                      = var.project_name
   tags                         = var.tags
   region                       = var.region
