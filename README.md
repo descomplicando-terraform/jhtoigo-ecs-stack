@@ -1,16 +1,23 @@
 # jhtoigo-ecs-stack
-Repositório do projeto final do curso de Terraform
+Repositório de stack do projeto final do curso de Terraform
+
+![](docs/stack.png)
 
 Este repositório é responsavel por criar a infraestrutura necessária para rodar um Cluster ECS Fargate.
-Os módulos de cada recurso estão no meu github e foram sendo desenvolvidos ao longo do curso e também na participação em outros cursos.
+Os módulos de cada recurso estão versionados no meu github e foram sendo desenvolvidos ao longo do curso e também na participação em outros cursos.
 
-Ele contempla:
+Cada modulo salva no AWS Parameter Store seus parametros para serem consumidos pelos repo de produto. 
 
-* VPC
-* Load Balancer
-* Cluster ECS Fargate
-* SSM Parameter Store
-* 
+Até agora os módulos nesta stack são:
+
+* [VPC](https://github.com/jhtoigo/terraform-aws-vpc.git)
+* [Load Balancer](https://github.com/jhtoigo/terraform-aws-load-balancer.git)
+* [Cluster ECS Fargate](https://github.com/jhtoigo/terraform-aws-ecs-cluster.git)
+
+## TODO
+
+* Módulo RDS
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -20,7 +27,9 @@ Ele contempla:
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.66.0 |
 
 ## Modules
 
@@ -32,7 +41,10 @@ No providers.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [aws_service_discovery_http_namespace.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/service_discovery_http_namespace) | resource |
+| [aws_ssm_parameter.sd_namespace_name](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter) | resource |
 
 ## Inputs
 
@@ -52,6 +64,7 @@ No resources.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_ssm_cluster_id"></a> [ssm\_cluster\_id](#output\_ssm\_cluster\_id) | SSM parameter ECS Cluster ID |
 | <a name="output_ssm_cluster_name"></a> [ssm\_cluster\_name](#output\_ssm\_cluster\_name) | SSM parameter ECS Cluster Name |
 | <a name="output_ssm_database_subnets_id"></a> [ssm\_database\_subnets\_id](#output\_ssm\_database\_subnets\_id) | SSM parameter IDs to database subnets IDs |
 | <a name="output_ssm_ecs_log_group"></a> [ssm\_ecs\_log\_group](#output\_ssm\_ecs\_log\_group) | SSM parameter Log Group |
@@ -59,5 +72,6 @@ No resources.
 | <a name="output_ssm_load_balancer_default_listener"></a> [ssm\_load\_balancer\_default\_listener](#output\_ssm\_load\_balancer\_default\_listener) | SSM Parameter load balancer default listener |
 | <a name="output_ssm_private_subnets_id"></a> [ssm\_private\_subnets\_id](#output\_ssm\_private\_subnets\_id) | SSM Parameter IDs to private subnets IDs |
 | <a name="output_ssm_public_subnets_id"></a> [ssm\_public\_subnets\_id](#output\_ssm\_public\_subnets\_id) | SSM Parameter IDs to public subnets IDs |
+| <a name="output_ssm_sd_namespace"></a> [ssm\_sd\_namespace](#output\_ssm\_sd\_namespace) | SSM parameter service discovery namespace |
 | <a name="output_ssm_vpc_id"></a> [ssm\_vpc\_id](#output\_ssm\_vpc\_id) | SSM Parameter ID to VPC ID |
 <!-- END_TF_DOCS -->
