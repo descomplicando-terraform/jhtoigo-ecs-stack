@@ -10,5 +10,13 @@ module "vpc" {
   nat_gateway_active = var.nat_gateway_active
 }
 
+module "load_balancer" {
+  source                       = "git@github.com:jhtoigo/terraform-aws-load-balancer.git?ref=v1.0.0"
+  lb_name                      = var.project_name
+  tags                         = var.tags
+  region                       = var.region
+  vpc_id                       = module.vpc.vpc_id
+  load_balancer_public_subnets = module.vpc.public_subnets
+}
 
 
