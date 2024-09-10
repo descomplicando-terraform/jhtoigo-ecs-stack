@@ -27,7 +27,7 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_ecs"></a> [ecs](#module\_ecs) | git@github.com:jhtoigo/terraform-aws-ecs-cluster.git | v1.1.0 |
-| <a name="module_load_balancer"></a> [load\_balancer](#module\_load\_balancer) | git@github.com:jhtoigo/terraform-aws-load-balancer.git | v1.0.0 |
+| <a name="module_load_balancer"></a> [load\_balancer](#module\_load\_balancer) | git@github.com:jhtoigo/terraform-aws-load-balancer.git | v1.1.0 |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | git@github.com:jhtoigo/terraform-aws-vpc.git | v1.2.0 |
 
 ## Resources
@@ -55,6 +55,8 @@ No resources.
 | <a name="output_ssm_cluster_name"></a> [ssm\_cluster\_name](#output\_ssm\_cluster\_name) | SSM parameter ECS Cluster Name |
 | <a name="output_ssm_database_subnets_id"></a> [ssm\_database\_subnets\_id](#output\_ssm\_database\_subnets\_id) | SSM parameter IDs to database subnets IDs |
 | <a name="output_ssm_ecs_log_group"></a> [ssm\_ecs\_log\_group](#output\_ssm\_ecs\_log\_group) | SSM parameter Log Group |
+| <a name="output_ssm_load_balancer_arn"></a> [ssm\_load\_balancer\_arn](#output\_ssm\_load\_balancer\_arn) | SSM Parameter load balancer arn |
+| <a name="output_ssm_load_balancer_default_listener"></a> [ssm\_load\_balancer\_default\_listener](#output\_ssm\_load\_balancer\_default\_listener) | SSM Parameter load balancer default listener |
 | <a name="output_ssm_private_subnets_id"></a> [ssm\_private\_subnets\_id](#output\_ssm\_private\_subnets\_id) | SSM Parameter IDs to private subnets IDs |
 | <a name="output_ssm_public_subnets_id"></a> [ssm\_public\_subnets\_id](#output\_ssm\_public\_subnets\_id) | SSM Parameter IDs to public subnets IDs |
 | <a name="output_ssm_vpc_id"></a> [ssm\_vpc\_id](#output\_ssm\_vpc\_id) | SSM Parameter ID to VPC ID |
