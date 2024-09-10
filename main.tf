@@ -19,4 +19,10 @@ module "load_balancer" {
   load_balancer_public_subnets = module.vpc.public_subnets
 }
 
+module "ecs" {
+  source           = "git@github.com:jhtoigo/terraform-aws-ecs-cluster.git?ref=v1.1.0"
+  ecs_cluster_name = var.project_name
+  project_name     = var.project_name
+  resource_tags    = var.tags
+}
 
