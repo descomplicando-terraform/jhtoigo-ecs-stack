@@ -1,6 +1,6 @@
 region       = "us-east-1"
-tags         = { "Project" = "linuxtips-terraform-intensivo", "Environment" = "dev" }
-project_name = "linuxtips-terraform-intensivo"
+tags         = { "Project" = "linuxtips-descomplicando-terraform", "Environment" = "dev" }
+project_name = "linuxtips-tf-final"
 
 ## VPC
 cidr_block         = "10.0.0.0/16"
