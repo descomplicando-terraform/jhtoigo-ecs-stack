@@ -21,8 +21,19 @@ module "load_balancer" {
 
 module "ecs" {
   source           = "git@github.com:jhtoigo/terraform-aws-ecs-cluster.git?ref=v1.1.0"
-  ecs_cluster_name = var.project_name
+  ecs_cluster_name = "cluster_1"
   project_name     = var.project_name
   resource_tags    = var.tags
 }
 
+resource "aws_service_discovery_http_namespace" "main" {
+  name        = var.project_name
+  description = "Service discovery for ECS Services"
+  tags        = var.tags
+}
+
+resource "aws_ssm_parameter" "sd_namespace_name" {
+  name  = format("/%s/namespace", var.project_name)
+  value = aws_service_discovery_http_namespace.main.name
+  type  = "String"
+}
