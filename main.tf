@@ -1,5 +1,6 @@
 module "vpc" {
-  source             = "git@github.com:jhtoigo/terraform-aws-vpc.git?ref=v1.2.0"
+  source             = "git@github.com:jhtoigo/terraform-aws-vpc.git?ref=v1.3.0"
+  region             = var.region
   project_name       = var.project_name
   tags               = var.tags
   azs                = var.azs
