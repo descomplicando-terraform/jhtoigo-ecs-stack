@@ -36,11 +36,6 @@ output "ssm_cluster_name" {
   value       = module.ecs.ssm_cluster_name
 }
 
-output "ssm_cluster_id" {
-  description = "SSM parameter ECS Cluster ID"
-  value       = module.ecs.ssm_cluster_id
-}
-
 output "ssm_ecs_log_group" {
   description = "SSM parameter Log Group"
   value       = module.ecs.ssm_ecs_log_group
