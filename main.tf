@@ -12,7 +12,7 @@ module "vpc" {
 }
 
 module "load_balancer" {
-  source                       = "git@github.com:jhtoigo/terraform-aws-load-balancer.git?ref=v1.1.0"
+  source                       = "git@github.com:jhtoigo/terraform-aws-load-balancer.git?ref=v1.2.0"
   lb_name                      = var.project_name
   tags                         = var.tags
   region                       = var.region
@@ -25,6 +25,11 @@ module "ecs" {
   ecs_cluster_name = "cluster_1"
   project_name     = var.project_name
   resource_tags    = var.tags
+}
+
+module "ecr" {
+  source         = "git@github.com:jhtoigo/terraform-aws-ecr.git?ref=v1.0.0"
+  ecr_repository = "linuxtips-tf-final-dev-produto"
 }
 
 resource "aws_service_discovery_http_namespace" "main" {
