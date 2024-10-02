@@ -1,5 +1,5 @@
 module "vpc" {
-  source             = "git@github.com:jhtoigo/terraform-aws-vpc.git?ref=v1.3.0"
+  source             = "git::https://github.com/jhtoigo/terraform-aws-vpc.git?ref=v1.3.0"
   region             = var.region
   project_name       = var.project_name
   tags               = var.tags
@@ -12,7 +12,7 @@ module "vpc" {
 }
 
 module "load_balancer" {
-  source                       = "git@github.com:jhtoigo/terraform-aws-load-balancer.git?ref=v1.2.0"
+  source                       = "git::https://github.com/jhtoigo/terraform-aws-load-balancer.git?ref=v1.2.0"
   lb_name                      = var.project_name
   tags                         = var.tags
   region                       = var.region
@@ -21,14 +21,14 @@ module "load_balancer" {
 }
 
 module "ecs" {
-  source           = "git@github.com:jhtoigo/terraform-aws-ecs-cluster.git?ref=v1.1.0"
+  source           = "git::https://github.com/jhtoigo/terraform-aws-ecs-cluster.git?ref=v1.1.1"
   ecs_cluster_name = "cluster_1"
   project_name     = var.project_name
   resource_tags    = var.tags
 }
 
 module "ecr" {
-  source         = "git@github.com:jhtoigo/terraform-aws-ecr.git?ref=v1.0.0"
+  source         = "git::https://github.com/jhtoigo/terraform-aws-ecr.git?ref=v1.0.0"
   ecr_repository = "linuxtips-tf-final-dev-produto"
 }
 
