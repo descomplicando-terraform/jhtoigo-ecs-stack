@@ -28,8 +28,8 @@ module "ecs" {
 }
 
 module "ecr" {
-  source         = "git::https://github.com/jhtoigo/terraform-aws-ecr.git?ref=v1.0.1"
-  ecr_repository = "linuxtips-tf-final-dev-produto"
+  source           = "git::https://github.com/jhtoigo/terraform-aws-ecr.git?ref=v2.0.0"
+  ecr_repositories = ["linuxtips-tf-final-dev-produto", "linuxtips-tf-final-dev-produto2"]
 }
 
 resource "aws_service_discovery_http_namespace" "main" {
