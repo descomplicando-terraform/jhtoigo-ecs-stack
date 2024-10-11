@@ -45,6 +45,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
       
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
@@ -54,3 +56,11 @@ jobs:
 
       - name: Run terraform validate
         run: terraform validate
+      
+      - name: Render terraform docs inside the README.md and push changes back to PR branch
+        uses: terraform-docs/gh-actions@v1.3.0
+        with:
+          working-dir: .
+          output-file: README.md
+          output-method: inject
+          git-push: "true"
