@@ -32,7 +32,7 @@ Foram utilizados módulos prórios que podem ser acessados em:
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ecr"></a> [ecr](#module\_ecr) | git::https://github.com/jhtoigo/terraform-aws-ecr.git | v1.0.1 |
+| <a name="module_ecr"></a> [ecr](#module\_ecr) | git::https://github.com/jhtoigo/terraform-aws-ecr.git | v2.0.0 |
 | <a name="module_ecs"></a> [ecs](#module\_ecs) | git::https://github.com/jhtoigo/terraform-aws-ecs-cluster.git | v1.1.2 |
 | <a name="module_load_balancer"></a> [load\_balancer](#module\_load\_balancer) | git::https://github.com/jhtoigo/terraform-aws-load-balancer.git | v1.2.0 |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | git::https://github.com/jhtoigo/terraform-aws-vpc.git | v1.3.1 |
