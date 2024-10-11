@@ -57,7 +57,7 @@ jobs:
         uses: hashicorp/setup-terraform@v2
       
       - name: Initialize Terraform
-        run: terraform init --backend-config=environment/dev/backend.tfvars
+        run: terraform init terraform init -backend=false
 
       - name: Run terraform validate
         run: terraform validate
