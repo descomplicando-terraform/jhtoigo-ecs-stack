@@ -18,6 +18,10 @@ variable "tags" {
 variable "cidr_block" {
   description = "CIDR Block for VPC"
   type        = string
+  validation {
+    condition     = can(regex("^([0-9]{1,3}\\.){3}[0-9]{1,3}/16$", var.cidr_block))
+    error_message = "The CIDR block must be a valid /16 range (e.g., 10.0.0.0/16)."
+  }
 }
 
 variable "azs" {
